@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<html lang="en">
+<link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Ceci est un test</title>
+</head>
+<body>
+<div class="w-full h-full bg-blue-100 min-h-screen">
+    <div class="flex">
+        <div>
+            <p class="italic bg-blue-100 text-3xl p-20 justify-left-auto hover:text-pink-600 ">Gestion des stockages de filtre</p>
+            <div class = "justify-center flex">
+            <button class="bg-pink-200 text-black text-xl rounded-full p-2 px-20 shadow-2x border-4 border-purple-400 hover:text-red-600  ">
+                SWAG
+            </button>
+        </div>
+        </div>
+
+<div class="w-2/5  rounded-lg hover:shadow-xl "><canvas id="myChart" ></canvas></div>
+    </div>
+
+</div>
+</body>
+</html>
+
+
+
+
+<script>var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+// The type of chart we want to create
+type: 'bar',
+
+// The data for our dataset
+data: {
+labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
+datasets: [{
+label: 'Stock des grillages',
+backgroundColor: 'rgb(81,255,8)',
+borderColor: 'rgb(255,248,15)',
+data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+}]
+},
+
+// Configuration options go here
+options: {
+    labels : {
+        defaultFontFamily:'Helvetica',
+        defaultFontSize:'12'
+
+    }
+}
+});
+
+function getRandomInt() {
+    return Math.floor(Math.random() * (50 - 5 + 1)) + 5
+
+}
+
+
+</script>
+
+
